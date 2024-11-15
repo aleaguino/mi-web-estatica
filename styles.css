@@ -1,4 +1,3 @@
-/* Reseteo básico */
 * {
     margin: 0;
     padding: 0;
@@ -7,98 +6,173 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f5f5d4;
+    color: #000;
 }
 
-/* Estilos para la cabecera */
 header {
-    background-color: #4a90e2;
-    color: white;
+    background-color: #fff6b2;
     padding: 20px;
-    text-align: center;
-    font-size: 1.5em;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #c7c7c7;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
     position: relative;
 }
 
-header .logo {
-    width: 50px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+
+nav ul li a.active, nav ul li a:hover {
+    color: #444;
+    text-decoration: underline;
 }
 
-/* Estructura principal */
-.container {
+.search-form {
     display: flex;
-    min-height: 80vh; /* Para llenar el espacio visible del navegador */
+    align-items: center;
 }
 
-/* Estilos para el menú lateral izquierdo */
-.sidebar {
-    width: 20%;
-    background-color: #333;
-    padding: 20px;
-    color: white;
+.search-form input {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
-.sidebar ul {
-    list-style-type: none;
-}
-
-.sidebar ul li {
-    margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.sidebar ul li a:hover {
-    color: #4a90e2;
-}
-
-/* Estilos para el contenido principal */
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #fff;
-}
-
-.main-content h2 {
-    color: #333;
-}
-
-.main-content p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4a90e2;
+.search-form button {
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: #a9a9a9;
     color: white;
     border: none;
+    border-radius: 3px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
+    margin-left: 5px;
 }
 
-button:hover {
-    background-color: #357ab7;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
 }
 
-/* Pie de página */
-footer {
-    background-color: #4a90e2;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
+.content {
+    width: 65%;
+    padding-right: 20px;
+}
+
+.post {
+    background-color: #fff6b2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.post h2 {
+    font-size: 1.5em;
+}
+
+.post h3 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #444;
+}
+
+.post .date {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.example-image {
+    max-width: 50%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.post .comments {
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.sidebar {
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.messages {
+    background-color: #c7c7c7;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.sidebar-image {
     width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .content, .sidebar {
+        width: 100%;
+        padding: 0;
+    }
+
+    .content {
+        order: 2;
+    }
+
+    .sidebar {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .search-form {
+        margin-top: 10px;
+    }
 }
